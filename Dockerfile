@@ -20,4 +20,4 @@ RUN echo "eula=true" > /data/eula.txt
 EXPOSE 25565 25575
 VOLUME ['/data']
 
-ENTRYPOINT ["/usr/lib/jvm/java-8-oracle/bin/java", "-Xmx2048M", "-Xms2048M", "-jar", "minecraft_server.1.8.1.jar", "nogui"]
+ENTRYPOINT ["/usr/lib/jvm/java-8-oracle/bin/java", "-Xmx2048M", "-Xms2048M", "-jar", "/data/minecraft_server.1.8.1.jar", "nogui"]
