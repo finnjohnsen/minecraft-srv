@@ -18,5 +18,4 @@ EXPOSE 25565 25575
 VOLUME ['/data']
 
 WORKDIR /data
-RUN echo "eula=true" > eula.txt
-ENTRYPOINT ["/usr/bin/java", "-Xmx2048M", "-Xms2048M", "-jar", "/minecraft_server.1.8.1.jar", "nogui"]
+# ENTRYPOINT ["/usr/bin/java", "-Xmx2048M", "-Xms2048M", "-Dcom.mojang.eula.agree=true", "-jar", "/minecraft_server.1.8.1.jar", "nogui"]
