@@ -11,13 +11,12 @@ RUN \
 
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 
-WORKDIR /data
+WORKDIR /
 RUN wget https://s3.amazonaws.com/Minecraft.Download/versions/1.8.1/minecraft_server.1.8.1.jar
 RUN echo "eula=true" > eula.txt
-
 
 EXPOSE 25565 25575
 VOLUME ['/data']
 
 WORKDIR /data
-ENTRYPOINT ["/usr/bin/java", "-Xmx2048M", "-Xms2048M", "-jar", "minecraft_server.1.8.1.jar", "nogui"]
+ENTRYPOINT ["/usr/bin/java", "-Xmx2048M", "-Xms2048M", "-jar", "/minecraft_server.1.8.1.jar", "nogui"]
