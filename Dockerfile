@@ -15,7 +15,8 @@ WORKDIR /
 RUN wget https://s3.amazonaws.com/Minecraft.Download/versions/1.8.1/minecraft_server.1.8.1.jar
 
 EXPOSE 25565 25575
-VOLUME ['/data']
+RUN chmod +x start
 
 WORKDIR /data
-ENTRYPOINT ["/usr/bin/java", "-Xmx2048M", "-Xms2048M", "-Dcom.mojang.eula.agree=true", "-jar", "/minecraft_server.1.8.1.jar", "nogui"]
+ADD eula.txt eula.txt
+ENTRYPOINT ["/usr/bin/java", "-Xmx2048M", "-Xms2048M", "-jar", "/minecraft_server.1.8.1.jar", "nogui"]
